@@ -22,9 +22,9 @@ spring:
     basename: messages/messages
   jackson:
     default-property-inclusion: non_null
-  profiles:
-    include:
-      - dev
+#  profiles:
+#    include:
+#      - dev
 
 eureka:
   instance:
