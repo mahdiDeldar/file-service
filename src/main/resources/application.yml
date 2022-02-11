@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: file-server
+  datasource:
+    url: jdbc:postgresql://test.elegant-designs.net:5432/shervin
+    username: shervin
+    initialization-mode: always
+  jpa:
+    properties:
+      hibernate:
+        default_schema: file_server
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    schemas: ${spring.jpa.properties.hibernate.default_schema}
+    baseline-on-migrate: true
+  servlet:
+    multipart:
+      max-file-size: 20MB
+  messages:
+    basename: messages/messages
+  jackson:
+    default-property-inclusion: non_null
+  profiles:
+    include:
+      - production
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://test.elegant-designs.net:8761/eureka
+
+#logging:
+#  level:
+#    com: debug
+#    org: debug
+server:
+  forward-headers-strategy: none
