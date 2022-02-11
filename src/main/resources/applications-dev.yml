@@ -3,7 +3,6 @@ spring:
     url: jdbc:postgresql://test.elegant-designs.net:5432/shervin
     username: shervin
     password: shervin
-    initialization-mode: always
 
 server:
   port: 8084
